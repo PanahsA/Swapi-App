@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppHeaderComponent } from './app-header/app-header.component';
+import { AppHeaderComponent } from './header/app-header.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CharactersComponent } from './characters/characters.component';
-import { CharacterComponent } from './character/character.component'
+import { CharacterComponent } from './characters/character/character.component'
 import { CharactersService } from './characters/characters.service';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CharactersService } from './characters/characters.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [CharactersService],
   bootstrap: [AppComponent]

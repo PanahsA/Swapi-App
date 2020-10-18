@@ -9,9 +9,11 @@ export class CharacterComponent implements OnInit {
   first = 'Luke'
   last = 'Skywalker'
   species = 'Human'
-  infoArray = [{ height: 172 }, { height: 77 }]
+  infoArray = [{ height: 172 }, { mass: 77 }]
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
   }

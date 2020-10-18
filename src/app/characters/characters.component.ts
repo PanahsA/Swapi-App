@@ -1,22 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { CharactersService } from './characters.service'
+import { HttpClient } from '@angular/common/http'
+import { map } from 'rxjs/operators'
+import { CharactersService } from './characters.service';
+
 
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.css']
 })
-
 export class CharactersComponent implements OnInit {
 
-  characters: string[]
+  characterNames: string[] = []
+  http: any
 
-  constructor(service: CharactersService) {
-    this.characters = service.getCharacters()
+  constructor(http: HttpClient, private charactersService: CharactersService) {
+    this.http = http
   }
 
 
   ngOnInit(): void {
+    this.charactersService.fetchCharacters().subscribe(
+      ({ results }) => {
+        this.characterNames = results.map((person) => person.name)
+      }
+    )
   }
+
+
 
 }

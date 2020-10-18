@@ -5,6 +5,7 @@ import { Component } from '@angular/core'
   template: `
   <header>
   <h1> Star Wars Wiki </h1>
+  <hr>
   </header>
   `,
   styles: []
