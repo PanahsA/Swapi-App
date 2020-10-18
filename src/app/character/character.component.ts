@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CharacterComponent implements OnInit {
   first = 'Luke'
   last = 'Skywalker'
-  specie = 'human'
+  species = 'Human'
+  infoArray = [{ height: 172 }, { height: 77 }]
 
   constructor() { }
 

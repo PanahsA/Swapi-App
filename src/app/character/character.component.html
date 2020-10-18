@@ -19,15 +19,11 @@
       <th scope="col">{{species}}</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td>Mark</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <td colspan="2">Larry the Bird</td>
+  <tbody colspan="3">
+    <tr *ngFor="let info of infoArray; let i=index">
+      <td>
+        {{info}}
+      </td>
     </tr>
   </tbody>
 </table>
