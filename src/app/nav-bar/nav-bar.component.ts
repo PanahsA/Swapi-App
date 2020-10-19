@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-nav-bar',
   template: `
   <nav>
-    <a href=""> CharactersList List </a>
-    <a href=""> Vehicles List </a>
+    <a routerLink="/characters"> Characters </a>
+    <a routerLink="#"> Vehicles  </a>
   </nav>
   `,
-  styles: ['nav{background-color:#333}', 'a{color:#FFE81F}', 'a{ padding:14px 16px}']
+  styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
 

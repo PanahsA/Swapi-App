@@ -4,11 +4,11 @@ import { Component } from '@angular/core'
   selector: "app-header",
   template: `
   <header>
-  <h1> Star Wars Wiki </h1>
+  <a routerLink="/"> Star Wars Wiki </a>
   <hr>
   </header>
   `,
-  styles: []
+  styleUrls: ['./app-header.component.css']
 })
 
 export class AppHeaderComponent {

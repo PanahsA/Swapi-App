@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http"
+import { RouterModule, Routes } from "@angular/router"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { CharactersListComponent } from './charactersList/charactersList.compone
 import { CharacterCardComponent } from './characterCard/characterCard.component'
 import { CharactersListService } from './charactersList/charactersList.service';
 
+const appRoutes: Routes = [{ path: 'characters', component: CharactersListComponent }, { path: 'characters/:id', component: CharacterCardComponent }]
+
 @NgModule({
   declarations: [
     AppComponent, AppHeaderComponent, NavBarComponent, CharactersListComponent, CharacterCardComponent
@@ -17,7 +20,8 @@ import { CharactersListService } from './charactersList/charactersList.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [CharactersListService],
   bootstrap: [AppComponent]

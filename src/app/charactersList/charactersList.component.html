@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let name of characterNames">
-    <a href="" >{{name}}</a> 
+  <li *ngFor="let name of characterNames index as i">
+    <a routerLink="{{i+1}}">{{name}}</a>
   </li>
 </ul>

@@ -11,4 +11,5 @@ export class CharactersListService {
     return this.http.get(this.swapiUrl)
   }
 
+
 }

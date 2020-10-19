@@ -1,4 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Character } from './character.model'
+import { CharacterService } from "./character.service"
 
 @Component({
   selector: 'app-characterCard',
@@ -6,16 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./characterCard.component.css']
 })
 export class CharacterCardComponent implements OnInit {
-  first = 'Luke'
-  last = 'Skywalker'
-  species = 'Human'
-  infoArray = [{ height: 172 }, { mass: 77 }]
+  id: number;
+  character: Character;
 
-  constructor() {
-    
-   }
+  constructor(private route: ActivatedRoute, private characterService: CharacterService) { }
 
   ngOnInit(): void {
+    this.id = Number(this.route.snapshot.params['id']);
+    this.characterService.fetchUserData(this.id).subscribe((response: Character) => {
+      this.character = { ...response }
+    })
   }
 
 }

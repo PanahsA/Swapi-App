@@ -11,6 +11,7 @@ import { CharactersListService } from './charactersList.service';
 export class CharactersListComponent implements OnInit {
 
   characterNames: string[] = []
+  characterLinks: string[]=[]
   http: any
 
   constructor(http: HttpClient, private charactersService: CharactersListService) {
@@ -20,8 +21,8 @@ export class CharactersListComponent implements OnInit {
 
   ngOnInit(): void {
     this.charactersService.fetchCharactersList().subscribe(
-      ({ results }) => {
-        this.characterNames = results.map((person) => person.name)
+      ({ results }:any) => {
+        this.characterNames = results.map((person) => person.name);
       }
     )
   }
