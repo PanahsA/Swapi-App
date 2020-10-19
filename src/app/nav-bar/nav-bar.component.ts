@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-nav-bar',
   template: `
   <nav>
-    <a href=""> Characters List </a>
+    <a href=""> CharactersList List </a>
     <a href=""> Vehicles List </a>
   </nav>
   `,

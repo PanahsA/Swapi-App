@@ -1,4 +1,4 @@
-export class Character {
+export class CharacterCard {
   public name: string;
   public height: string;
   public mass: string;

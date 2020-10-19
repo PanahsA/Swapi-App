@@ -6,20 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './header/app-header.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { CharactersComponent } from './characters/characters.component';
-import { CharacterComponent } from './characters/character/character.component'
-import { CharactersService } from './characters/characters.service';
+import { CharactersListComponent } from './charactersList/charactersList.component';
+import { CharacterCardComponent } from './characterCard/characterCard.component'
+import { CharactersListService } from './charactersList/charactersList.service';
 
 @NgModule({
   declarations: [
-    AppComponent, AppHeaderComponent, NavBarComponent, CharactersComponent, CharacterComponent
+    AppComponent, AppHeaderComponent, NavBarComponent, CharactersListComponent, CharacterCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CharactersService],
+  providers: [CharactersListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
