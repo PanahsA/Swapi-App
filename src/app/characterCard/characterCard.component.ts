@@ -13,15 +13,14 @@ export class CharacterCardComponent implements OnInit {
   id: number;
   character: Character;
 
-  constructor(private route: ActivatedRoute, private characterService: CharacterService) { }
+  constructor(private route: ActivatedRoute, private characterService: CharacterService) {    this.id = Number(this.route.snapshot.params['id']);
+}
 
   ngOnInit(): void {
-    this.id = Number(this.route.snapshot.params['id']);
     this.characterService.fetchCharacterData(this.id).subscribe((response: Character) => {
       this.character = { ...response }
       console.log(this.character)
     })
-   
   }
 
 }

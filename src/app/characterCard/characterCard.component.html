@@ -1,19 +1,18 @@
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">{{character.name}}</th>
-      <th scope="col">{{character.species}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <div *ngIf="character; then thenBlock else elseBlock"></div>
-    <ng-template #thenBlock>
+<div *ngIf="character">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">{{character.name}}</th>
+        <th scope="col">{{character.species}}</th>
+      </tr>
+    </thead>
+    <tbody>
+
       <tr *ngFor="let prop of character|keyvalue">
         <td>
           {{prop.key}}: {{prop.value}}
         </td>
       </tr>
-    </ng-template>
-    <ng-template #elseBlock>Content to render when condition is false.</ng-template>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
