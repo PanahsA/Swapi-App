@@ -6,10 +6,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let prop of character|keyvalue">
-      <td>
-        {{prop.key}}: {{prop.value}}
-      </td>
-    </tr>
+    <div *ngIf="character; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <tr *ngFor="let prop of character|keyvalue">
+        <td>
+          {{prop.key}}: {{prop.value}}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template #elseBlock>Content to render when condition is false.</ng-template>
   </tbody>
 </table>

@@ -7,7 +7,7 @@ export class CharacterService {
   charUrlBase = 'https://swapi.dev/api/people'
   constructor(private http: HttpClient) { }
 
-  fetchUserData(id: number) {
+  fetchCharacterData(id: number) {
     return this.http.get(this.charUrlBase + '/' + id)
   }
 
