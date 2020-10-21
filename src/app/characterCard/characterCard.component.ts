@@ -23,4 +23,7 @@ export class CharacterCardComponent implements OnInit {
     })
   }
 
+  // originalOrder = (a: KeyValue<number,string>, b: KeyValue<number,string>): number => {
+  //   return 0;
+  // }
 }

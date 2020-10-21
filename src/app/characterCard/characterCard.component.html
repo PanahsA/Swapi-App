@@ -7,8 +7,7 @@
       </tr>
     </thead>
     <tbody>
-
-      <tr *ngFor="let prop of character|keyvalue">
+      <tr *ngFor="let prop of character|keyvalue: 0">
         <td>
           {{prop.key}}: {{prop.value}}
         </td>
